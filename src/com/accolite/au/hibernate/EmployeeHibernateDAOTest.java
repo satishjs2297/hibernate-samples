@@ -28,7 +28,21 @@ public class EmployeeHibernateDAOTest {
 
 	@Test
 	public void testSaveEmployee() {
-		Employee emp = new Employee("Hyd","testing","abc123");
-		empDao.saveEmployee(emp);
+		for(int i = 0; i < 10; i++) {
+			Employee emp = new Employee("Hyd"+i,"testing"+i,"abc123"+i);
+			empDao.saveEmployee(emp);
+		}
+	}
+	
+	@Test
+	@Ignore
+	public void testgetEmployeeId() {
+		Employee employee = empDao.getEmployeeById(1);
+	}
+	
+	@Test
+	public void testRemoveEmployee() {
+		Employee employee = empDao.getEmployeeById(2);
+		empDao.deleteEmployee(employee);
 	}
 }
