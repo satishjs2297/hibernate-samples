@@ -8,10 +8,11 @@ import javax.persistence.Embeddable;
 @Embeddable
 public class UserPk implements Serializable {
 	
-	@Column(name = "user_name")
-	private String name;
-	@Column(name = "mobile_number")
+	private static final long serialVersionUID = 7322031425766085774L;
+	
+	private String name;	
 	private String mobileNumber;
+	
 	public UserPk() {
 
 	}
@@ -49,6 +50,22 @@ public class UserPk implements Serializable {
 		} else if (!name.equals(other.name))
 			return false;
 		return true;
+	}
+	
+	@Column(name = "user_name")
+	public String getName() {
+		return name;
+	}
+	@Column(name = "mobile_number")
+	public String getMobileNumber() {
+		return mobileNumber;
+	}
+	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setMobileNumber(String mobileNumber) {
+		this.mobileNumber = mobileNumber;
 	}
 	
 	

@@ -18,8 +18,7 @@ public class User {
 	}
 	
 	
-	
-	@EmbeddedId
+	@EmbeddedId	
 	public UserPk getUserPk() {
 		return userPk;
 	}

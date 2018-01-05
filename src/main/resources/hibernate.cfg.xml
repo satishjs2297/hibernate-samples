@@ -18,8 +18,14 @@
 <property name="hibernate.hbm2ddl.auto">none</property>
 
 
-<mapping class="com.accolite.au.hibernate.model.Employee" />
+<!-- <mapping class="com.accolite.au.hibernate.model.Employee" />
+
+<mapping class="com.accolite.au.hibernate.model.UserPk" />
 <mapping class="com.accolite.au.hibernate.model.User" />
+ -->
+
+<mapping class="com.accolite.au.hibernate.model.Customer" />
+<mapping class="com.accolite.au.hibernate.model.Account" />
 
 </session-factory>
 </hibernate-configuration>
