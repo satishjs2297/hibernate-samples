@@ -2,12 +2,15 @@ package com.accolite.au.hibernate.model;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class UserPk implements Serializable {
 	
+	@Column(name = "user_name")
 	private String name;
+	@Column(name = "mobile_number")
 	private String mobileNumber;
 	public UserPk() {
 
