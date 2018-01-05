@@ -7,10 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "employee")
+
+@NamedQueries({
+	@NamedQuery(name="getEmployeeById", query="from Employee where id=:empId")		
+})
 public class Employee implements Serializable {
 
 	public Employee() {
@@ -71,8 +77,12 @@ public class Employee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", empName=" + empName + ", empAddress=" + empAddress + ", empMobileNos="
-				+ empMobileNos + "]";
+		return "\n Employee ["
+				+ "id=" + id 
+				+ ", empName=" + empName 
+				+ ", empAddress=" + empAddress 
+				+ ", empMobileNos="+ empMobileNos 
+				+ "]";
 	}
 
 }
